@@ -15,6 +15,7 @@ using Newtonsoft.Json.Linq;
 
 namespace testProject
 {
+    // https://www.youtube.com/watch?v=vrhIxBWSJ04 꼭 한번 보시고 거기에 맞춰서 전반적으로 정리 해주세요.
     public partial class MainForm : Form
     {
         string CopyPath;
