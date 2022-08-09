@@ -31,11 +31,11 @@ namespace testProject
         {
             this.Location = Screen.AllScreens[1].WorkingArea.Location;
 
-            string path = "C:\\Users\\office4\\Desktop\\temp\\jSon.txt";
+            string path = "C:\\Users\\office4\\Desktop\\temp\\jSon.txt"; // 최종 파일명 은 전부 소문자가 기본입니다. 
 
-            if (File.Exists(path))
+            if (File.Exists(path)) // 이런 함수는 LoadJson 내부에서 처리 해주는게 어떨까요?
             {
-                LoadJson(path);
+                LoadJson(path); // Load 성공 유무는 어떻게 알 수 있을가요?
             }
         }
 
@@ -44,11 +44,11 @@ namespace testProject
 
         }
 
-        private int work(int count)
+        private int work(int count) // 함수명은 기본적으로 PascalCase 입니다. Work 라고는 하셨는데 함수명칭만 봐서는 이 함수가 뭘 하는지는 모릅니다.
         {
             Copy c = new Copy();
 
-            for(int i = 0; i < count; i++)
+            for(int i = 0; i < count; i++) // <- 이 로직은 Copy 핸들러에서 리스트만 받아서 처리 하는게 좋지 않을 까요? list<T> 또는 Array, 또는 배열 사용법을 익혀 주세요
             {
                 string source_path = lsbFileListBox.Items[i].ToString();
 
@@ -137,6 +137,11 @@ namespace testProject
             public string FileList = "";
             public string LogList = "";
         }
+
+        /// 이하 기능은
+        /// SystemConfig, ProgramSettings등의 클래스 에서 관리하는 것이 좋습니다.
+        /// PathSetting 클래스 정도가 적당 하겠네요.
+        /// 
         private void InputJson(string path)
         {
             JObject jObject = new JObject(
