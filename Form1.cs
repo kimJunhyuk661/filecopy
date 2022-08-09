@@ -35,7 +35,7 @@ namespace testProject
 
             if (File.Exists(path))
             {
-                InputJson(path + "");
+                LoadJson(path);
             }
         }
 
@@ -115,7 +115,7 @@ namespace testProject
             if (fbd.ShowDialog() == DialogResult.OK)
             {
                 CopyPath = fbd.SelectedPath;
-                pathTextbox0.Text = CopyPath;
+                pathTextBox0.Text = CopyPath;
             }
         }
 
@@ -148,6 +148,30 @@ namespace testProject
             jObject.Add("LogList", JArray.FromObject(lsbLogsListBox.Items));
 
             File.WriteAllText(path, jObject.ToString());
+        }
+
+        private void LoadJson(string path)
+        {
+            using (StreamReader file = File.OpenText(path))
+            using (JsonTextReader reader = new JsonTextReader(file))
+            {
+                JObject json = (JObject)JToken.ReadFrom(reader);
+                CopyPath = json.SelectToken("CopyPath").ToString();
+                BackupPath = json.SelectToken("BackupPath").ToString();
+                pathTextBox0.Text = CopyPath;
+                pathTextBox1.Text = BackupPath;
+
+                string fileText = json.SelectToken("FileList").ToString();
+                string logText = json.SelectToken("LogList").ToString();
+
+                string[] fileArray = fileText.Split(',');
+                string[] logArray = logText.Split(',');
+
+                for (int i = 0; i < fileArray.Length; i++)
+                    lsbFileListBox.Items.Add(fileArray[i]);
+                for (int i = 0; i < logArray.Length; i++)
+                    lsbLogsListBox.Items.Add(logArray[i]);
+            }
         }
     }
 }

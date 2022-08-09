@@ -37,7 +37,7 @@
             this.lsbLogsListBox = new System.Windows.Forms.ListBox();
             this.copyButton = new System.Windows.Forms.Button();
             this.settingSaveButton = new System.Windows.Forms.Button();
-            this.pathTextbox0 = new System.Windows.Forms.TextBox();
+            this.pathTextBox0 = new System.Windows.Forms.TextBox();
             this.pathTextBox1 = new System.Windows.Forms.TextBox();
             this.findPathButton0 = new System.Windows.Forms.Button();
             this.findPathButton1 = new System.Windows.Forms.Button();
@@ -128,11 +128,11 @@
             // 
             // pathTextbox0
             // 
-            this.pathTextbox0.Location = new System.Drawing.Point(75, 220);
-            this.pathTextbox0.Name = "pathTextbox0";
-            this.pathTextbox0.ReadOnly = true;
-            this.pathTextbox0.Size = new System.Drawing.Size(494, 21);
-            this.pathTextbox0.TabIndex = 9;
+            this.pathTextBox0.Location = new System.Drawing.Point(75, 220);
+            this.pathTextBox0.Name = "pathTextbox0";
+            this.pathTextBox0.ReadOnly = true;
+            this.pathTextBox0.Size = new System.Drawing.Size(494, 21);
+            this.pathTextBox0.TabIndex = 9;
             // 
             // pathTextBox1
             // 
@@ -170,7 +170,7 @@
             this.Controls.Add(this.findPathButton1);
             this.Controls.Add(this.findPathButton0);
             this.Controls.Add(this.pathTextBox1);
-            this.Controls.Add(this.pathTextbox0);
+            this.Controls.Add(this.pathTextBox0);
             this.Controls.Add(this.lsbLogsListBox);
             this.Controls.Add(this.copyButton);
             this.Controls.Add(this.settingSaveButton);
@@ -202,7 +202,7 @@
         private System.Windows.Forms.ListBox lsbLogsListBox;
         private System.Windows.Forms.Button copyButton;
         private System.Windows.Forms.Button settingSaveButton;
-        private System.Windows.Forms.TextBox pathTextbox0;
+        private System.Windows.Forms.TextBox pathTextBox0;
         private System.Windows.Forms.TextBox pathTextBox1;
         private System.Windows.Forms.Button findPathButton0;
         private System.Windows.Forms.Button findPathButton1;
