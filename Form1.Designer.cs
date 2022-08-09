@@ -1,6 +1,6 @@
 ﻿namespace testProject
 {
-    partial class mainForm
+    partial class MainForm
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.fileButton = new System.Windows.Forms.Button();
+            this.FileSelectButton = new System.Windows.Forms.Button();
             this.pathDeleteButton = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.lsbFileListBox = new System.Windows.Forms.ListBox();
@@ -43,15 +43,15 @@
             this.findPathButton1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // fileButton
+            // FileSelectButton
             // 
-            this.fileButton.Location = new System.Drawing.Point(12, 12);
-            this.fileButton.Name = "fileButton";
-            this.fileButton.Size = new System.Drawing.Size(132, 49);
-            this.fileButton.TabIndex = 0;
-            this.fileButton.Text = "파일 등록";
-            this.fileButton.UseVisualStyleBackColor = true;
-            this.fileButton.Click += new System.EventHandler(this.button_Click);
+            this.FileSelectButton.Location = new System.Drawing.Point(12, 12);
+            this.FileSelectButton.Name = "FileSelectButton";
+            this.FileSelectButton.Size = new System.Drawing.Size(132, 49);
+            this.FileSelectButton.TabIndex = 0;
+            this.FileSelectButton.Text = "파일 등록";
+            this.FileSelectButton.UseVisualStyleBackColor = true;
+            this.FileSelectButton.Click += new System.EventHandler(this.button_Click);
             // 
             // pathDeleteButton
             // 
@@ -162,7 +162,7 @@
             this.findPathButton1.UseVisualStyleBackColor = true;
             this.findPathButton1.Click += new System.EventHandler(this.findPathButton1_Click);
             // 
-            // mainForm
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -179,10 +179,10 @@
             this.Controls.Add(this.lsbFileListBox);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.pathDeleteButton);
-            this.Controls.Add(this.fileButton);
+            this.Controls.Add(this.FileSelectButton);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "mainForm";
+            this.Name = "MainForm";
             this.Text = "파일 복사기";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainForm_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -193,7 +193,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button fileButton;
+        private System.Windows.Forms.Button FileSelectButton;
         private System.Windows.Forms.Button pathDeleteButton;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.ListBox lsbFileListBox;

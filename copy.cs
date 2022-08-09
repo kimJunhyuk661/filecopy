@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace testProject
 {
-    public class copy
+    public class Copy
     {
         public string temp(string source_path, string target_path)
         {

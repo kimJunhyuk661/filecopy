@@ -15,12 +15,12 @@ using Newtonsoft.Json.Linq;
 
 namespace testProject
 {
-    public partial class mainForm : Form
+    public partial class MainForm : Form
     {
-        string m_copyPath;
-        string m_backupPath;
+        string CopyPath;
+        string BackupPath;
 
-        public mainForm()
+        public MainForm()
         {
             InitializeComponent();
 
@@ -39,14 +39,14 @@ namespace testProject
 
         private int work(int count)
         {
-            copy c = new copy();
+            Copy c = new Copy();
 
             for(int i = 0; i < count; i++)
             {
                 string source_path = lsbFileListBox.Items[i].ToString();
 
                 string[] buffer = source_path.Split('\\');
-                string target_path = m_copyPath + "\\" + buffer[buffer.Length - 1];
+                string target_path = CopyPath + "\\" + buffer[buffer.Length - 1];
 
                 lsbLogsListBox.Items.Add("[" + DateTime.Now.ToString("hh:mm:ss") + "] " + source_path + " 파일을 " + target_path + " 복사 시작");
                 lsbLogsListBox.Items.Add(c.temp(source_path, target_path));
@@ -107,8 +107,8 @@ namespace testProject
 
             if (fbd.ShowDialog() == DialogResult.OK)
             {
-                m_copyPath = fbd.SelectedPath;
-                pathTextbox0.Text = m_copyPath;
+                CopyPath = fbd.SelectedPath;
+                pathTextbox0.Text = CopyPath;
             }
         }
 
@@ -118,16 +118,16 @@ namespace testProject
 
             if (fbd.ShowDialog() == DialogResult.OK)
             {
-                m_backupPath = fbd.SelectedPath;
-                pathTextBox1.Text = m_backupPath;
+                BackupPath = fbd.SelectedPath;
+                pathTextBox1.Text = BackupPath;
             }
         }
 
         private void InputJson(string path)
         {
             string[] array = new string[2];
-            array[0] = m_copyPath;
-            array[1] = m_copyPath;
+            array[0] = CopyPath;
+            array[1] = CopyPath;
 
             File.WriteAllLines(path, array);
         }
