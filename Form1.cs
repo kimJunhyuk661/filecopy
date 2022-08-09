@@ -30,6 +30,13 @@ namespace testProject
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Location = Screen.AllScreens[1].WorkingArea.Location;
+
+            string path = "C:\\Users\\office4\\Desktop\\temp\\jSon.txt";
+
+            if (File.Exists(path))
+            {
+                InputJson(path + "");
+            }
         }
 
         private void mainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -85,11 +92,11 @@ namespace testProject
 
         private void settingSaveButton_Click(object sender, EventArgs e)
         {
-            string path = "C:\\Users\\office4\\Desktop\\temp\\jSon.txt";
+            string path = "C:\\Users\\office4\\Desktop\\temp";
 
-            if (File.Exists(path))
+            if (!File.Exists(path))
             {
-                InputJson(path);
+                InputJson(path + "\\jSon.txt");
             }
         }
 
@@ -123,13 +130,24 @@ namespace testProject
             }
         }
 
+        public class Data
+        {
+            public string CopyPath = "";
+            public string BackupPath = "";
+            public string FileList = "";
+            public string LogList = "";
+        }
         private void InputJson(string path)
         {
-            string[] array = new string[2];
-            array[0] = CopyPath;
-            array[1] = CopyPath;
+            JObject jObject = new JObject(
+                new JProperty("CopyPath", CopyPath),
+                new JProperty("BackupPath", BackupPath)
+                //new JProperty("")
+                );
+            jObject.Add("FileList", JArray.FromObject(lsbFileListBox.Items));
+            jObject.Add("LogList", JArray.FromObject(lsbLogsListBox.Items));
 
-            File.WriteAllLines(path, array);
+            File.WriteAllText(path, jObject.ToString());
         }
     }
 }
