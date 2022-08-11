@@ -28,40 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.FileSelectButton = new System.Windows.Forms.Button();
-            this.pathDeleteButton = new System.Windows.Forms.Button();
+            this.btnFileSelect = new System.Windows.Forms.Button();
+            this.btnFileDelete = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.lsbFileListBox = new System.Windows.Forms.ListBox();
+            this.lstFileList = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lsbLogsListBox = new System.Windows.Forms.ListBox();
-            this.copyButton = new System.Windows.Forms.Button();
-            this.settingSaveButton = new System.Windows.Forms.Button();
-            this.pathTextBox0 = new System.Windows.Forms.TextBox();
-            this.pathTextBox1 = new System.Windows.Forms.TextBox();
-            this.findPathButton0 = new System.Windows.Forms.Button();
-            this.findPathButton1 = new System.Windows.Forms.Button();
+            this.lstLogList = new System.Windows.Forms.ListBox();
+            this.btnFileCopy = new System.Windows.Forms.Button();
+            this.btnSettingSave = new System.Windows.Forms.Button();
+            this.txtTargetPath = new System.Windows.Forms.TextBox();
+            this.txtBackupPath = new System.Windows.Forms.TextBox();
+            this.btnFineTargetPath = new System.Windows.Forms.Button();
+            this.btnFindBackupPath = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // FileSelectButton
+            // btnFileSelect
             // 
-            this.FileSelectButton.Location = new System.Drawing.Point(12, 12);
-            this.FileSelectButton.Name = "FileSelectButton";
-            this.FileSelectButton.Size = new System.Drawing.Size(132, 49);
-            this.FileSelectButton.TabIndex = 0;
-            this.FileSelectButton.Text = "파일 등록";
-            this.FileSelectButton.UseVisualStyleBackColor = true;
-            this.FileSelectButton.Click += new System.EventHandler(this.button_Click);
+            this.btnFileSelect.Location = new System.Drawing.Point(12, 12);
+            this.btnFileSelect.Name = "btnFileSelect";
+            this.btnFileSelect.Size = new System.Drawing.Size(132, 49);
+            this.btnFileSelect.TabIndex = 0;
+            this.btnFileSelect.Text = "파일 등록";
+            this.btnFileSelect.UseVisualStyleBackColor = true;
+            this.btnFileSelect.Click += new System.EventHandler(this.btnFileSelect_Click);
             // 
-            // pathDeleteButton
+            // btnFileDelete
             // 
-            this.pathDeleteButton.Location = new System.Drawing.Point(494, 12);
-            this.pathDeleteButton.Name = "pathDeleteButton";
-            this.pathDeleteButton.Size = new System.Drawing.Size(132, 49);
-            this.pathDeleteButton.TabIndex = 1;
-            this.pathDeleteButton.Text = "경로 삭제";
-            this.pathDeleteButton.UseVisualStyleBackColor = true;
-            this.pathDeleteButton.Click += new System.EventHandler(this.pathDeleteButton_Click);
+            this.btnFileDelete.Location = new System.Drawing.Point(494, 12);
+            this.btnFileDelete.Name = "btnFileDelete";
+            this.btnFileDelete.Size = new System.Drawing.Size(132, 49);
+            this.btnFileDelete.TabIndex = 1;
+            this.btnFileDelete.Text = "경로 삭제";
+            this.btnFileDelete.UseVisualStyleBackColor = true;
+            this.btnFileDelete.Click += new System.EventHandler(this.btnFileDelete_Click);
             // 
             // progressBar1
             // 
@@ -70,14 +70,14 @@
             this.progressBar1.Size = new System.Drawing.Size(848, 12);
             this.progressBar1.TabIndex = 2;
             // 
-            // lsbFileListBox
+            // lstFileList
             // 
-            this.lsbFileListBox.FormattingEnabled = true;
-            this.lsbFileListBox.ItemHeight = 12;
-            this.lsbFileListBox.Location = new System.Drawing.Point(12, 67);
-            this.lsbFileListBox.Name = "lsbFileListBox";
-            this.lsbFileListBox.Size = new System.Drawing.Size(848, 148);
-            this.lsbFileListBox.TabIndex = 3;
+            this.lstFileList.FormattingEnabled = true;
+            this.lstFileList.ItemHeight = 12;
+            this.lstFileList.Location = new System.Drawing.Point(12, 67);
+            this.lstFileList.Name = "lstFileList";
+            this.lstFileList.Size = new System.Drawing.Size(848, 148);
+            this.lstFileList.TabIndex = 3;
             // 
             // label1
             // 
@@ -97,89 +97,89 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "백업 폴더";
             // 
-            // lsbLogsListBox
+            // lstLogList
             // 
-            this.lsbLogsListBox.FormattingEnabled = true;
-            this.lsbLogsListBox.ItemHeight = 12;
-            this.lsbLogsListBox.Location = new System.Drawing.Point(12, 329);
-            this.lsbLogsListBox.Name = "lsbLogsListBox";
-            this.lsbLogsListBox.Size = new System.Drawing.Size(848, 148);
-            this.lsbLogsListBox.TabIndex = 8;
+            this.lstLogList.FormattingEnabled = true;
+            this.lstLogList.ItemHeight = 12;
+            this.lstLogList.Location = new System.Drawing.Point(12, 329);
+            this.lstLogList.Name = "lstLogList";
+            this.lstLogList.Size = new System.Drawing.Size(848, 148);
+            this.lstLogList.TabIndex = 8;
             // 
-            // copyButton
+            // btnFileCopy
             // 
-            this.copyButton.Location = new System.Drawing.Point(494, 274);
-            this.copyButton.Name = "copyButton";
-            this.copyButton.Size = new System.Drawing.Size(132, 49);
-            this.copyButton.TabIndex = 7;
-            this.copyButton.Text = "파일 카피 시작";
-            this.copyButton.UseVisualStyleBackColor = true;
-            this.copyButton.Click += new System.EventHandler(this.copyButton_Click);
+            this.btnFileCopy.Location = new System.Drawing.Point(494, 274);
+            this.btnFileCopy.Name = "btnFileCopy";
+            this.btnFileCopy.Size = new System.Drawing.Size(132, 49);
+            this.btnFileCopy.TabIndex = 7;
+            this.btnFileCopy.Text = "파일 카피 시작";
+            this.btnFileCopy.UseVisualStyleBackColor = true;
+            this.btnFileCopy.Click += new System.EventHandler(this.btnFileCopy_Click);
             // 
-            // settingSaveButton
+            // btnSettingSave
             // 
-            this.settingSaveButton.Location = new System.Drawing.Point(12, 274);
-            this.settingSaveButton.Name = "settingSaveButton";
-            this.settingSaveButton.Size = new System.Drawing.Size(132, 49);
-            this.settingSaveButton.TabIndex = 6;
-            this.settingSaveButton.Text = "설정 기억";
-            this.settingSaveButton.UseVisualStyleBackColor = true;
-            this.settingSaveButton.Click += new System.EventHandler(this.settingSaveButton_Click);
+            this.btnSettingSave.Location = new System.Drawing.Point(12, 274);
+            this.btnSettingSave.Name = "btnSettingSave";
+            this.btnSettingSave.Size = new System.Drawing.Size(132, 49);
+            this.btnSettingSave.TabIndex = 6;
+            this.btnSettingSave.Text = "설정 기억";
+            this.btnSettingSave.UseVisualStyleBackColor = true;
+            this.btnSettingSave.Click += new System.EventHandler(this.btnSettingSave_Click);
             // 
-            // pathTextbox0
+            // txtTargetPath
             // 
-            this.pathTextBox0.Location = new System.Drawing.Point(75, 220);
-            this.pathTextBox0.Name = "pathTextbox0";
-            this.pathTextBox0.ReadOnly = true;
-            this.pathTextBox0.Size = new System.Drawing.Size(494, 21);
-            this.pathTextBox0.TabIndex = 9;
+            this.txtTargetPath.Location = new System.Drawing.Point(75, 220);
+            this.txtTargetPath.Name = "txtTargetPath";
+            this.txtTargetPath.ReadOnly = true;
+            this.txtTargetPath.Size = new System.Drawing.Size(494, 21);
+            this.txtTargetPath.TabIndex = 9;
             // 
-            // pathTextBox1
+            // txtBackupPath
             // 
-            this.pathTextBox1.Location = new System.Drawing.Point(75, 246);
-            this.pathTextBox1.Name = "pathTextBox1";
-            this.pathTextBox1.ReadOnly = true;
-            this.pathTextBox1.Size = new System.Drawing.Size(494, 21);
-            this.pathTextBox1.TabIndex = 10;
+            this.txtBackupPath.Location = new System.Drawing.Point(75, 246);
+            this.txtBackupPath.Name = "txtBackupPath";
+            this.txtBackupPath.ReadOnly = true;
+            this.txtBackupPath.Size = new System.Drawing.Size(494, 21);
+            this.txtBackupPath.TabIndex = 10;
             // 
-            // findPathButton0
+            // btnFineTargetPath
             // 
-            this.findPathButton0.Location = new System.Drawing.Point(575, 220);
-            this.findPathButton0.Name = "findPathButton0";
-            this.findPathButton0.Size = new System.Drawing.Size(51, 23);
-            this.findPathButton0.TabIndex = 11;
-            this.findPathButton0.Text = "_";
-            this.findPathButton0.UseVisualStyleBackColor = true;
-            this.findPathButton0.Click += new System.EventHandler(this.findPathButton0_Click);
+            this.btnFineTargetPath.Location = new System.Drawing.Point(575, 220);
+            this.btnFineTargetPath.Name = "btnFineTargetPath";
+            this.btnFineTargetPath.Size = new System.Drawing.Size(51, 23);
+            this.btnFineTargetPath.TabIndex = 11;
+            this.btnFineTargetPath.Text = "_";
+            this.btnFineTargetPath.UseVisualStyleBackColor = true;
+            this.btnFineTargetPath.Click += new System.EventHandler(this.btnFindTargetPath_Click);
             // 
-            // findPathButton1
+            // btnFindBackupPath
             // 
-            this.findPathButton1.Location = new System.Drawing.Point(575, 245);
-            this.findPathButton1.Name = "findPathButton1";
-            this.findPathButton1.Size = new System.Drawing.Size(51, 23);
-            this.findPathButton1.TabIndex = 12;
-            this.findPathButton1.Text = "_";
-            this.findPathButton1.UseVisualStyleBackColor = true;
-            this.findPathButton1.Click += new System.EventHandler(this.findPathButton1_Click);
+            this.btnFindBackupPath.Location = new System.Drawing.Point(575, 245);
+            this.btnFindBackupPath.Name = "btnFindBackupPath";
+            this.btnFindBackupPath.Size = new System.Drawing.Size(51, 23);
+            this.btnFindBackupPath.TabIndex = 12;
+            this.btnFindBackupPath.Text = "_";
+            this.btnFindBackupPath.UseVisualStyleBackColor = true;
+            this.btnFindBackupPath.Click += new System.EventHandler(this.btnFindBackupPath_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(872, 507);
-            this.Controls.Add(this.findPathButton1);
-            this.Controls.Add(this.findPathButton0);
-            this.Controls.Add(this.pathTextBox1);
-            this.Controls.Add(this.pathTextBox0);
-            this.Controls.Add(this.lsbLogsListBox);
-            this.Controls.Add(this.copyButton);
-            this.Controls.Add(this.settingSaveButton);
+            this.Controls.Add(this.btnFindBackupPath);
+            this.Controls.Add(this.btnFineTargetPath);
+            this.Controls.Add(this.txtBackupPath);
+            this.Controls.Add(this.txtTargetPath);
+            this.Controls.Add(this.lstLogList);
+            this.Controls.Add(this.btnFileCopy);
+            this.Controls.Add(this.btnSettingSave);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lsbFileListBox);
+            this.Controls.Add(this.lstFileList);
             this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.pathDeleteButton);
-            this.Controls.Add(this.FileSelectButton);
+            this.Controls.Add(this.btnFileDelete);
+            this.Controls.Add(this.btnFileSelect);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
@@ -193,19 +193,19 @@
 
         #endregion
 
-        private System.Windows.Forms.Button FileSelectButton;
-        private System.Windows.Forms.Button pathDeleteButton;
+        private System.Windows.Forms.Button btnFileSelect;
+        private System.Windows.Forms.Button btnFileDelete;
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.ListBox lsbFileListBox;
+        private System.Windows.Forms.ListBox lstFileList;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox lsbLogsListBox;
-        private System.Windows.Forms.Button copyButton;
-        private System.Windows.Forms.Button settingSaveButton;
-        private System.Windows.Forms.TextBox pathTextBox0;
-        private System.Windows.Forms.TextBox pathTextBox1;
-        private System.Windows.Forms.Button findPathButton0;
-        private System.Windows.Forms.Button findPathButton1;
+        private System.Windows.Forms.ListBox lstLogList;
+        private System.Windows.Forms.Button btnFileCopy;
+        private System.Windows.Forms.Button btnSettingSave;
+        private System.Windows.Forms.TextBox txtTargetPath;
+        private System.Windows.Forms.TextBox txtBackupPath;
+        private System.Windows.Forms.Button btnFineTargetPath;
+        private System.Windows.Forms.Button btnFindBackupPath;
     }
 }
 
