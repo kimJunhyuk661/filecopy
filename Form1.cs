@@ -30,9 +30,9 @@ namespace testProject
             pathSetting = new PathSetting("C:\\Users\\office4\\Desktop\\temp\\json.txt"); // 최종 파일명 은 전부 소문자가 기본입니다. // 파일명 -> Json -> json
             if (pathSetting.LoadJson())
             {
-                //lstFileList.Items.AddRange(pathSetting.FilePathArray);
-                //txtTargetPath.Text = pathSetting.CopyPath;
-                //txtBackupPath.Text = pathSetting.BackupPath;
+                lstFileList.Items.AddRange(pathSetting.ClassValue.FilePathArray);
+                txtTargetPath.Text = pathSetting.ClassValue.CopyPath;
+                txtBackupPath.Text = pathSetting.ClassValue.BackupPath;
             }
         }
 
@@ -47,7 +47,8 @@ namespace testProject
             string copyPath = txtTargetPath.Text;
 
             FileCopyHandler fileCopy = new FileCopyHandler();
-            Task.Factory.StartNew(() => fileCopy.CopyAction(filePathArray, copyPath, lstLogList));
+            fileCopy.UpdateValueEvent += this.UpdateFileList;
+            Task.Factory.StartNew(() => fileCopy.CopyAction(filePathArray, copyPath));
         }
 
         private void btnFileSelect_Click(object sender, EventArgs e)
@@ -62,7 +63,7 @@ namespace testProject
                 foreach (String filePath in ofd.FileNames)
                     lstFileList.Items.Add(filePath.ToString());
             }
-            pathSetting.setValue(lstFileList.Items.OfType<string>().ToArray(), txtTargetPath.Text, txtBackupPath.Text);
+            pathSetting.SetValue(lstFileList.Items.OfType<string>().ToArray(), txtTargetPath.Text, txtBackupPath.Text);
         }
 
         private void btnFileDelete_Click(object sender, EventArgs e)
@@ -90,7 +91,7 @@ namespace testProject
 
             if (fbd.ShowDialog() == DialogResult.OK)
             {
-                pathSetting.settingValue.CopyPath = fbd.SelectedPath;
+                pathSetting.ClassValue.CopyPath = fbd.SelectedPath;
                 txtTargetPath.Text = fbd.SelectedPath;
             }
         }
@@ -101,17 +102,14 @@ namespace testProject
 
             if (fbd.ShowDialog() == DialogResult.OK)
             {
-                pathSetting.settingValue.BackupPath = fbd.SelectedPath;
+                pathSetting.ClassValue.BackupPath = fbd.SelectedPath;
                 txtBackupPath.Text = fbd.SelectedPath;
             }
         }
 
-        public class Data
+        private void UpdateFileList(object sender, EventArgs e)
         {
-            public string CopyPath = "";
-            public string BackupPath = "";
-            public string FileList = "";
-            public string LogList = "";
+            lstLogList.Items.Add(sender.ToString());
         }
     }
 }

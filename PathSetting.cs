@@ -17,7 +17,6 @@ namespace testProject
             {
                 get;set;
             }
-
             public string CopyPath
             {
                 get; set;
@@ -29,23 +28,23 @@ namespace testProject
         }
 
         string storagePath;
-        public SettingValue settingValue;
+        public SettingValue ClassValue;
         public PathSetting(string path)
         {
             storagePath = path;
-            settingValue = new SettingValue();
+            ClassValue = new SettingValue();
         }
 
-        public void setValue(string[] filePathArray, string copyPath, string backupPath)
+        public void SetValue(string[] filePathArray, string copyPath, string backupPath)
         {
-            settingValue.FilePathArray = filePathArray;
-            settingValue.CopyPath = copyPath;
-            settingValue.BackupPath = backupPath;
+            ClassValue.FilePathArray = filePathArray;
+            ClassValue.CopyPath = copyPath;
+            ClassValue.BackupPath = backupPath;
         }
         
         public void SaveJson()
         {
-            string jsonString = JsonConvert.SerializeObject(settingValue);
+            string jsonString = JsonConvert.SerializeObject(ClassValue);
             File.WriteAllText(storagePath, jsonString);
         }
 
@@ -53,12 +52,8 @@ namespace testProject
         {
             if (File.Exists(storagePath))
             {
-                using (StreamReader file = File.OpenText(storagePath))
-                using (JsonTextReader reader = new JsonTextReader(file))
-                {
-                    JObject json = (JObject)JToken.ReadFrom(reader);
-                    //settingValue = JsonConvert.DeserializeObject(;
-                }
+                string value = File.ReadAllText(storagePath);
+                ClassValue = JsonConvert.DeserializeObject<SettingValue>(value);
 
                 return true;
             }
